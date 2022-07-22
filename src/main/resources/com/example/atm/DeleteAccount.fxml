@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="347.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atm.DeleteAccount">
+   <children>
+      <Label layoutX="204.0" layoutY="14.0" prefHeight="39.0" prefWidth="193.0" text="Delete your account">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="BackDelete" layoutX="364.0" layoutY="293.0" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="102.0" text="Back" />
+      <Button fx:id="Exit6" layoutX="54.0" layoutY="293.0" mnemonicParsing="false" onAction="#exit" prefHeight="33.0" prefWidth="102.0" text="Exit" />
+      <Button fx:id="SubmitDelet" layoutX="490.0" layoutY="293.0" mnemonicParsing="false" onAction="#checkAccountDetails" prefHeight="33.0" prefWidth="102.0" text="Submit" />
+      <Label layoutX="52.0" layoutY="63.0" prefHeight="39.0" prefWidth="305.0" text="Please verify your account number">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="169.0" prefHeight="39.0" prefWidth="193.0" text="Please verify your Pin">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="115.0" prefHeight="39.0" prefWidth="276.0" text="Please verify your First Name">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="DeleteAccountText" layoutX="364.0" layoutY="70.0" />
+      <TextField fx:id="DeleteName" layoutX="364.0" layoutY="122.0" />
+      <TextField fx:id="DeletePin" layoutX="364.0" layoutY="176.0" />
+   </children>
+</AnchorPane>

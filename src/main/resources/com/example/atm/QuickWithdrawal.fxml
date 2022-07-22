@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atm.QuickWithdrawal">
+   <children>
+      <Label layoutX="163.0" layoutY="14.0" prefHeight="39.0" prefWidth="291.0" text="Welcome To Quick Withdrawl">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="73.0" prefHeight="39.0" prefWidth="252.0" text="Choose one of the following options">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="ten" layoutX="114.0" layoutY="135.0" mnemonicParsing="false" onAction="#moneyTen" prefHeight="39.0" prefWidth="95.0" text="£10" />
+      <Button fx:id="twenty" layoutX="114.0" layoutY="208.0" mnemonicParsing="false" onAction="#moneyTwenty" prefHeight="39.0" prefWidth="95.0" text="£20" />
+      <Button fx:id="fifty" layoutX="116.0" layoutY="286.0" mnemonicParsing="false" onAction="#moneyFifty" prefHeight="39.0" prefWidth="95.0" text="£50" />
+      <Button fx:id="oneHundread" layoutX="359.0" layoutY="135.0" mnemonicParsing="false" onAction="#moneyOneHundred" prefHeight="39.0" prefWidth="95.0" text="£100" />
+      <Button fx:id="oneFifty" layoutX="359.0" layoutY="208.0" mnemonicParsing="false" onAction="#moneyOneFifty" prefHeight="39.0" prefWidth="95.0" text="£150" />
+      <Button fx:id="Other" layoutX="359.0" layoutY="286.0" mnemonicParsing="false" onAction="#other" prefHeight="39.0" prefWidth="95.0" text="OTHER" />
+      <Button fx:id="Back1" layoutX="491.0" layoutY="347.0" mnemonicParsing="false" onAction="#back" prefHeight="39.0" prefWidth="95.0" text="Back" />
+      <Button fx:id="Exit1" layoutX="14.0" layoutY="347.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="95.0" text="Exit" />
+   </children>
+</AnchorPane>
