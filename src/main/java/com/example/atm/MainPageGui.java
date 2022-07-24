@@ -21,15 +21,16 @@ public class MainPageGui {
     @FXML
     Button Next;
     boolean loop = false;
+    public String loginAccountNumber;
 
     //Checking if the input matches the DB
     //Using MySql
     //I call userDB. That's where the query is made to select the details from the Account Number and Pin
     public void check(ActionEvent event) throws IOException {
-        String accountNumber = new String(number.getText());
+        loginAccountNumber = new String(number.getText());
         String accountPin = new String(pin.getText());
         //check if txtField is empty
-        if (accountNumber.equals("") || accountPin.equals("")) {
+        if (loginAccountNumber.equals("") || accountPin.equals("")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error Dialog");
             alert.setHeaderText(null);
@@ -40,7 +41,7 @@ public class MainPageGui {
         else {
             // sets a boolean to see if the return value is true
             UserDB userDB = new UserDB();
-            boolean accountLogin = userDB.validateAccount(accountNumber, accountPin);
+            boolean accountLogin = userDB.validateAccount(loginAccountNumber, accountPin);
 
             do {
                 loop = false;

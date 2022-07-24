@@ -12,14 +12,14 @@ import javafx.stage.Stage;
 import java.sql.SQLException;
 
 public class QuickWithdrawal {
-    //FIX!! //FIX!! //FIX!! //FIX!! //FIX!! //FIX!!
-    //FIX!! //FIX!! //FIX!! //FIX!! //FIX!! //FIX!! //FIX!! //FIX!! //FIX!! //FIX!!
-    //FIX!! //FIX!! //FIX!! //FIX!! //FIX!! //FIX!!
     @FXML
     Button ten, twenty, fifty, oneHundread, oneFifty, Other, Exit1;
+
     //Calling classes
+    MainPageGui mainPage = new MainPageGui();
     UserDB userDB = new UserDB();
-    int number = userDB.balance();
+    QuickWithdrawlDataBase quickWithdrawlDataBase = new QuickWithdrawlDataBase();
+//    int number = userDB.balance();
 
     public QuickWithdrawal() throws SQLException {
     }
@@ -38,8 +38,9 @@ public class QuickWithdrawal {
 
     // Calling userDB method to return the balance
     // Subtracting the balance from 10 and seeing if the new value is greater than 0.
-    public void moneyTen() {
-        if ((number - 10) > 0) {
+    public void moneyTen() throws SQLException {
+        boolean test = quickWithdrawlDataBase.withdraw10(mainPage.loginAccountNumber);
+        if (!(test)) {
             alertInfo.setTitle("SUCCESSFUL");
             alertInfo.setHeaderText(null);
             alertInfo.setContentText("Transaction successful: £10 has been withdrawn from your account");
@@ -50,8 +51,9 @@ public class QuickWithdrawal {
     }
 
     // Subtracting 20
-    public void moneyTwenty() {
-        if ((number - 20) > 0) {
+    public void moneyTwenty() throws SQLException {
+        boolean test = quickWithdrawlDataBase.withdraw10(mainPage.loginAccountNumber);
+        if (!(test)) {
             alertInfo.setTitle("SUCCESSFUL");
             alertInfo.setHeaderText(null);
             alertInfo.setContentText("Transaction successful: £20 has been withdrawn from your account");
@@ -62,8 +64,9 @@ public class QuickWithdrawal {
     }
 
     //Subtracting 50
-    public void moneyFifty() {
-        if ((number - 50) > 0) {
+    public void moneyFifty() throws SQLException {
+        boolean test = quickWithdrawlDataBase.withdraw10(mainPage.loginAccountNumber);
+        if (!(test)) {
             alertInfo.setTitle("SUCCESSFUL");
             alertInfo.setHeaderText(null);
             alertInfo.setContentText("Transaction successful: £50 has been withdrawn from your account");
@@ -74,8 +77,9 @@ public class QuickWithdrawal {
     }
 
     //Subtracting 100
-    public void moneyOneHundred() {
-        if ((number - 100) > 0) {
+    public void moneyOneHundred() throws SQLException {
+        boolean test = quickWithdrawlDataBase.withdraw10(mainPage.loginAccountNumber);
+        if (!(test)) {
             alertInfo.setTitle("SUCCESSFUL");
             alertInfo.setHeaderText(null);
             alertInfo.setContentText("Transaction successful: £100 has been withdrawn from your account");
@@ -86,8 +90,9 @@ public class QuickWithdrawal {
     }
 
     //Subtracting 150
-    public void moneyOneFifty() {
-        if ((number - 150) > 0) {
+    public void moneyOneFifty() throws SQLException {
+        boolean test = quickWithdrawlDataBase.withdraw10(mainPage.loginAccountNumber);
+        if (!(test)) {
             alertInfo.setTitle("SUCCESSFUL");
             alertInfo.setHeaderText(null);
             alertInfo.setContentText("Transaction successful: £150 has been withdrawn from your account");

@@ -15,8 +15,10 @@ public class TransferMoney {
     @FXML
     Button TransferExit, TransferBack, TransferSubmit;
     UserDB userDB = new UserDB();
+    MainPageGui mainPage = new MainPageGui();
+
     public String accountNumber;
-    public String userAccountDetails;
+    //    public String userAccountDetails;
     public String amount;
 
     //I'm getting the text from account number to select the account from DB
@@ -25,14 +27,15 @@ public class TransferMoney {
     public void transferMoney() throws SQLException {
         accountNumber = new String(TransferAccount.getText());
         amount = new String(TransferAmount.getText());
-        userAccountDetails = new String(UserAccount.getText());
+//        userAccountDetails = new String(UserAccount.getText());
 
         boolean amountUpdate = userDB.transferMoney(amount, accountNumber);
-        boolean subtractBalance = userDB.userUpdate(amount, userAccountDetails);
+//        boolean subtractBalance = userDB.userUpdate(amount, userAccountDetails);
+        boolean test = userDB.userUpdate(amount, mainPage.loginAccountNumber);
 
         Alert alert;
         //If amountUpdate & subtractBalance return false an error message will appear
-        if (!(amountUpdate) && !(subtractBalance)) {
+        if (!(amountUpdate) && !(test)) {
             alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error Dialog");
             alert.setHeaderText(null);

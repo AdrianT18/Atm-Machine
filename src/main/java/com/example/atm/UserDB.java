@@ -10,10 +10,12 @@ public class UserDB {
     ResultSet rs;
     int currentBalance = 0;
 
+    public String testAccountNumber;
+
 
     //Getting the details from the DB
     //From the AccountNumber column
-    public boolean validateAccount(String AccountNumber, String Pin) {
+    public boolean validateAccount(String testAccountNumber, String Pin) {
         //Calling the connection
         Connection con = ConnectDB.getConnection();
 
@@ -21,7 +23,7 @@ public class UserDB {
             //selecting the data from Account_Number
             statement = con.prepareStatement(
                     "SELECT Account_Number,Pin FROM AtmUsers WHERE Account_Number =? AND Pin =? ");
-            statement.setString(1, AccountNumber);
+            statement.setString(1, testAccountNumber);
             statement.setString(2, Pin);
             resultSet = statement.executeQuery();
             //If it != query then return false / if its empty row
@@ -78,10 +80,11 @@ public class UserDB {
         Connection con = ConnectDB.getConnection();
         try {
             statement = con.prepareStatement(
-                    "UPDATE AtmUsers SET Balance = Balance - ?   WHERE Account_Number =?"
+                    "UPDATE AtmUsers SET Balance = Balance - ?   WHERE Account_Number = ?  "
             );
             statement.setString(1, balance);
             statement.setString(2, accountNumber);
+
             return statement.executeUpdate() < 0;
         } catch (SQLException e) {
             throw new RuntimeException(e);
