@@ -8,6 +8,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class OtherAmount {
@@ -18,34 +19,35 @@ public class OtherAmount {
     TextField Amount;
     @FXML
     Button Submit;
-    UserDB userDB = new UserDB();
-    int number = userDB.balance();
-
-    public OtherAmount() throws SQLException {
-    }
+    //Calling classes
+    MainPageGui mainPage = new MainPageGui();
+    QuickWithdrawlDataBase quickWithdrawlDataBase = new QuickWithdrawlDataBase();
 
     public Alert alert;
 
-
     //checking user input(other amount)
     //Checks if the user has enough funds to take out
+    //Subtracts the other amount from balance
     public void getAmount() throws SQLException {
         alert = new Alert(Alert.AlertType.INFORMATION);
         // converts the string to int
         int amount = Integer.parseInt(Amount.getText());
+        boolean withdrawOtherAmount = quickWithdrawlDataBase.otherAmount(amount, mainPage.getVariable());
+        Integer Balance = quickWithdrawlDataBase.balance(mainPage.getVariable());
 
         //If no amount is entered it shows an error box
         if (Amount.getText().isEmpty()) {
             alert.setTitle("Error");
             alert.setHeaderText(null);
-            alert.setContentText("Please make sure you enter an amount above £5");
+            alert.setContentText("Please make sure you enter an amount");
         }
         // If the inputted amount - users balance is greater than 0 a successful message shows
-        else if ((number - amount) >= 0) {
+        else if (withdrawOtherAmount || Balance == 0) {
             alert.setTitle("Successful");
             alert.setHeaderText(null);
             alert.setContentText("Transaction successful: £" + amount + " has been withdrawn from your account");
         }
+
         // Else an error message
         else {
             alert.setTitle("Error Dialog");

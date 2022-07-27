@@ -5,12 +5,9 @@ import java.sql.*;
 public class UserDB {
     PreparedStatement statement = null;
     ResultSet resultSet = null;
-
     boolean result;
     ResultSet rs;
     int currentBalance = 0;
-
-    public String testAccountNumber;
 
 
     //Getting the details from the DB
@@ -34,38 +31,12 @@ public class UserDB {
         return result;
     }
 
-    //Getting the details from the DB
-    //From the balance column
-    //Returns balance details
-
-    //FIX!!
-    //FIX!!
-    //FIX!!
-    public int balance() throws SQLException {
-        Connection con = ConnectDB.getConnection();
-        try {
-            Statement statement = con.createStatement();
-            String sql = "SELECT Account_Number, Balance FROM AtmUsers  ";
-            rs = statement.executeQuery(sql);
-
-            if (rs.next())
-                rs.getInt("Balance");
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return rs.getInt("Balance");
-    }
-    //FIX!!
-    //FIX!!
-    //FIX!!
-
     //Updating the new balance of the user when a new amount is sent
     public boolean transferMoney(String balance, String accountNumber) throws SQLException {
         Connection con = ConnectDB.getConnection();
         try {
             statement = con.prepareStatement(
-                    "UPDATE AtmUsers SET Balance =? + Balance  WHERE Account_Number =?"
+                    "UPDATE AtmUsers SET  Balance = Balance + ?  WHERE Account_Number =?  "
             );
             statement.setString(1, balance);
             statement.setString(2, accountNumber);
@@ -76,16 +47,15 @@ public class UserDB {
     }
 
     //Update the balance of the user sending money
-    public boolean userUpdate(String balance, String accountNumber) throws SQLException {
+    public boolean userUpdate(String balance, String accountNumberTest) throws SQLException {
         Connection con = ConnectDB.getConnection();
         try {
             statement = con.prepareStatement(
-                    "UPDATE AtmUsers SET Balance = Balance - ?   WHERE Account_Number = ?  "
+                    "UPDATE AtmUsers SET Balance = Balance - ? Where Account_Number = ? "
             );
             statement.setString(1, balance);
-            statement.setString(2, accountNumber);
-
-            return statement.executeUpdate() < 0;
+            statement.setString(2, accountNumberTest);
+            return statement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

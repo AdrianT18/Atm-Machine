@@ -17,9 +17,9 @@ public class ChangePin {
     Button SubmitPin, BackPin, ClearPin, ExitPin;
     @FXML
     TextField Account1, CurrentPin, NewPin1, NewPin2;
-    PasswordField test1, test2;
 
     UserDB userDB = new UserDB();
+    MainPageGui mainPage = new MainPageGui();
     public String accountNumber;
     public String pin;
     public String newPin;
@@ -30,7 +30,6 @@ public class ChangePin {
     //Updating pin in DB
     public void updatePin(ActionEvent event) throws SQLException, IOException {
         //gets the string from text field
-        accountNumber = new String(Account1.getText());
         pin = new String(CurrentPin.getText());
         newPin = new String(NewPin1.getText());
         confirmNewPin = new String(NewPin2.getText());
@@ -39,8 +38,8 @@ public class ChangePin {
         Alert alertInfo = new Alert(Alert.AlertType.INFORMATION);
 
         //Boolean to check if the query in userDB returns true
-        boolean accountConfirm = userDB.validateAccount(accountNumber, pin);
-        boolean pinUpdate = userDB.updatePin(newPin, accountNumber);
+        boolean accountConfirm = userDB.validateAccount(mainPage.getVariable(), pin);
+        boolean pinUpdate = userDB.updatePin(newPin, mainPage.getVariable());
 
         //if the boolean returns false error message will show
         if (!(accountConfirm)) {
@@ -48,7 +47,6 @@ public class ChangePin {
             alert.setTitle("Error Dialog");
             alert.setHeaderText(null);
             alert.setContentText("Please make sure that your account number and pin are valid");
-            alert.showAndWait();
         }
         //else if the new pin doesn't match confirm pin an error message will appear to make sure the entered pin is the same
         else if (!(pinUpdate) && newPin.equals(pin)) {

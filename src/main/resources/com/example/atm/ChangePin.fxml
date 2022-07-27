@@ -6,40 +6,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atm.ChangePin">
+<AnchorPane prefHeight="328.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atm.ChangePin">
    <children>
       <Label layoutX="154.0" layoutY="14.0" prefHeight="39.0" prefWidth="293.0" text="You can change your pin here">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="149.0" prefHeight="39.0" prefWidth="242.0" text="Please enter your current pin">
+      <Label layoutX="34.0" layoutY="72.0" prefHeight="39.0" prefWidth="242.0" text="Please enter your current pin">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="CurrentPin" layoutX="319.0" layoutY="156.0" />
-      <Label layoutX="33.0" layoutY="200.0" prefHeight="39.0" prefWidth="242.0" text="Please enter your new pin">
+      <TextField fx:id="CurrentPin" layoutX="319.0" layoutY="79.0" />
+      <Label layoutX="34.0" layoutY="124.0" prefHeight="39.0" prefWidth="242.0" text="Please enter your new pin">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="NewPin1" layoutX="319.0" layoutY="207.0" />
-      <Label layoutX="33.0" layoutY="255.0" prefHeight="39.0" prefWidth="242.0" text="Please re-enter your new pin">
+      <TextField fx:id="NewPin1" layoutX="319.0" layoutY="131.0" />
+      <Label layoutX="33.0" layoutY="181.0" prefHeight="39.0" prefWidth="242.0" text="Please re-enter your new pin">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="NewPin2" layoutX="319.0" layoutY="262.0" />
-      <Button fx:id="SubmitPin" layoutX="497.0" layoutY="335.0" mnemonicParsing="false" onAction="#updatePin" prefHeight="33.0" prefWidth="89.0" text="Submit" />
-      <Button fx:id="BackPin" layoutX="394.0" layoutY="335.0" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="89.0" text="Back" />
-      <Button fx:id="ExitPin" layoutX="34.0" layoutY="335.0" mnemonicParsing="false" onAction="#exit" prefHeight="33.0" prefWidth="89.0" text="Exit" />
-      <Button fx:id="ClearPin" layoutX="497.0" layoutY="258.0" mnemonicParsing="false" onAction="#clear" prefHeight="33.0" prefWidth="89.0" text="Clear " />
-      <Label layoutX="33.0" layoutY="93.0" prefHeight="39.0" prefWidth="286.0" text="Please enter your account number">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="Account1" layoutX="319.0" layoutY="100.0" />
+      <TextField fx:id="NewPin2" layoutX="319.0" layoutY="188.0" />
+      <Button fx:id="SubmitPin" layoutX="497.0" layoutY="265.0" mnemonicParsing="false" onAction="#updatePin" prefHeight="33.0" prefWidth="89.0" text="Submit" />
+      <Button fx:id="BackPin" layoutX="394.0" layoutY="265.0" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="89.0" text="Back" />
+      <Button fx:id="ExitPin" layoutX="34.0" layoutY="265.0" mnemonicParsing="false" onAction="#exit" prefHeight="33.0" prefWidth="89.0" text="Exit" />
+      <Button fx:id="ClearPin" layoutX="497.0" layoutY="184.0" mnemonicParsing="false" onAction="#clear" prefHeight="33.0" prefWidth="89.0" text="Clear " />
    </children>
 </AnchorPane>

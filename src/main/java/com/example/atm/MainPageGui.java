@@ -15,13 +15,18 @@ import java.io.IOException;
 
 public class MainPageGui {
     @FXML
-    public TextField number;
+    private TextField number = new TextField();
     @FXML
     public TextField pin;
     @FXML
     Button Next;
     boolean loop = false;
-    public String loginAccountNumber;
+    private static String loginAccountNumber;
+
+    //Making a getter so that I can use the variable publicly meaning the user doesn't have to verify their account details
+    public String getVariable() {
+        return loginAccountNumber;
+    }
 
     //Checking if the input matches the DB
     //Using MySql
@@ -30,7 +35,7 @@ public class MainPageGui {
         loginAccountNumber = new String(number.getText());
         String accountPin = new String(pin.getText());
         //check if txtField is empty
-        if (loginAccountNumber.equals("") || accountPin.equals("")) {
+        if (getVariable().equals("") || accountPin.equals("")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error Dialog");
             alert.setHeaderText(null);
@@ -41,7 +46,7 @@ public class MainPageGui {
         else {
             // sets a boolean to see if the return value is true
             UserDB userDB = new UserDB();
-            boolean accountLogin = userDB.validateAccount(loginAccountNumber, accountPin);
+            boolean accountLogin = userDB.validateAccount(getVariable(), accountPin);
 
             do {
                 loop = false;

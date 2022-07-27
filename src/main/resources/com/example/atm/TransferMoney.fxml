@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="424.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atm.TransferMoney">
+<AnchorPane prefHeight="347.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.atm.TransferMoney">
    <children>
       <Label layoutX="173.0" layoutY="24.0" prefHeight="39.0" prefWidth="291.0" text="Welcome To Transfer Money">
          <font>
@@ -18,26 +18,20 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <TextField fx:id="TransferAccount" layoutX="24.0" layoutY="233.0" />
-      <Label layoutX="24.0" layoutY="189.0" prefHeight="39.0" prefWidth="252.0" text="Please enter their account number: ">
+      <TextField fx:id="TransferAccount" layoutX="24.0" layoutY="161.0" />
+      <Label layoutX="24.0" layoutY="122.0" prefHeight="39.0" prefWidth="252.0" text="Please enter their account number: ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="265.0" prefHeight="39.0" prefWidth="266.0" text="How much would you like to transfer?">
+      <Label layoutX="24.0" layoutY="193.0" prefHeight="39.0" prefWidth="266.0" text="How much would you like to transfer?">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="TransferAmount" layoutX="24.0" layoutY="310.0" />
-      <Button fx:id="TransferExit" layoutX="24.0" layoutY="371.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="95.0" text="Exit" />
-      <Button fx:id="TransferSubmit" layoutX="491.0" layoutY="371.0" mnemonicParsing="false" onAction="#transferMoney" prefHeight="39.0" prefWidth="95.0" text="Submit" />
-      <Button fx:id="TransferBack" layoutX="384.0" layoutY="371.0" mnemonicParsing="false" onAction="#back" prefHeight="39.0" prefWidth="95.0" text="Back" />
-      <Label layoutX="24.0" layoutY="122.0" prefHeight="39.0" prefWidth="252.0" text="Please enter your account number: ">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="UserAccount" layoutX="24.0" layoutY="161.0" />
+      <TextField fx:id="TransferAmount" layoutX="24.0" layoutY="232.0" />
+      <Button fx:id="TransferExit" layoutX="24.0" layoutY="297.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="95.0" text="Exit" />
+      <Button fx:id="TransferSubmit" layoutX="491.0" layoutY="297.0" mnemonicParsing="false" onAction="#transferMoney" prefHeight="39.0" prefWidth="95.0" text="Submit" />
+      <Button fx:id="TransferBack" layoutX="369.0" layoutY="297.0" mnemonicParsing="false" onAction="#back" prefHeight="39.0" prefWidth="95.0" text="Back" />
    </children>
 </AnchorPane>

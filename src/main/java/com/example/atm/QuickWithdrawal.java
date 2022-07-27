@@ -11,20 +11,19 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
+
 public class QuickWithdrawal {
+
     @FXML
     Button ten, twenty, fifty, oneHundread, oneFifty, Other, Exit1;
 
     //Calling classes
     MainPageGui mainPage = new MainPageGui();
-    UserDB userDB = new UserDB();
     QuickWithdrawlDataBase quickWithdrawlDataBase = new QuickWithdrawlDataBase();
-//    int number = userDB.balance();
-
-    public QuickWithdrawal() throws SQLException {
-    }
 
     public Scene scene;
+
+    //Alert boxes
     Alert alertInfo = new Alert(Alert.AlertType.INFORMATION);
 
     //Error message. If the value is not what expected after potential withdrawal
@@ -38,9 +37,9 @@ public class QuickWithdrawal {
 
     // Calling userDB method to return the balance
     // Subtracting the balance from 10 and seeing if the new value is greater than 0.
-    public void moneyTen() throws SQLException {
-        boolean test = quickWithdrawlDataBase.withdraw10(mainPage.loginAccountNumber);
-        if (!(test)) {
+    public void subtractTen() throws SQLException {
+        boolean withdrawTen = quickWithdrawlDataBase.withdraw10(mainPage.getVariable());
+        if (withdrawTen) {
             alertInfo.setTitle("SUCCESSFUL");
             alertInfo.setHeaderText(null);
             alertInfo.setContentText("Transaction successful: £10 has been withdrawn from your account");
@@ -51,9 +50,9 @@ public class QuickWithdrawal {
     }
 
     // Subtracting 20
-    public void moneyTwenty() throws SQLException {
-        boolean test = quickWithdrawlDataBase.withdraw10(mainPage.loginAccountNumber);
-        if (!(test)) {
+    public void subtractTwenty() throws SQLException {
+        boolean withdrawTwenty = quickWithdrawlDataBase.withdraw20(mainPage.getVariable());
+        if (withdrawTwenty) {
             alertInfo.setTitle("SUCCESSFUL");
             alertInfo.setHeaderText(null);
             alertInfo.setContentText("Transaction successful: £20 has been withdrawn from your account");
@@ -64,9 +63,9 @@ public class QuickWithdrawal {
     }
 
     //Subtracting 50
-    public void moneyFifty() throws SQLException {
-        boolean test = quickWithdrawlDataBase.withdraw10(mainPage.loginAccountNumber);
-        if (!(test)) {
+    public void subtractFifty() throws SQLException {
+        boolean withdrawFifty = quickWithdrawlDataBase.withdraw50(mainPage.getVariable());
+        if (withdrawFifty) {
             alertInfo.setTitle("SUCCESSFUL");
             alertInfo.setHeaderText(null);
             alertInfo.setContentText("Transaction successful: £50 has been withdrawn from your account");
@@ -77,9 +76,9 @@ public class QuickWithdrawal {
     }
 
     //Subtracting 100
-    public void moneyOneHundred() throws SQLException {
-        boolean test = quickWithdrawlDataBase.withdraw10(mainPage.loginAccountNumber);
-        if (!(test)) {
+    public void subtractOneHundred() throws SQLException {
+        boolean withdraw100 = quickWithdrawlDataBase.withdraw100(mainPage.getVariable());
+        if (withdraw100) {
             alertInfo.setTitle("SUCCESSFUL");
             alertInfo.setHeaderText(null);
             alertInfo.setContentText("Transaction successful: £100 has been withdrawn from your account");
@@ -90,9 +89,9 @@ public class QuickWithdrawal {
     }
 
     //Subtracting 150
-    public void moneyOneFifty() throws SQLException {
-        boolean test = quickWithdrawlDataBase.withdraw10(mainPage.loginAccountNumber);
-        if (!(test)) {
+    public void subtractOneFifty() throws SQLException {
+        boolean withdraw150 = quickWithdrawlDataBase.withdraw150(mainPage.getVariable());
+        if (withdraw150) {
             alertInfo.setTitle("SUCCESSFUL");
             alertInfo.setHeaderText(null);
             alertInfo.setContentText("Transaction successful: £150 has been withdrawn from your account");
@@ -103,7 +102,7 @@ public class QuickWithdrawal {
     }
 
     //Subtracting other amount
-    public void other() {
+    public void subtractOther() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("OtherAmount.fxml"));
             scene = new Scene(root);
@@ -116,6 +115,7 @@ public class QuickWithdrawal {
         }
     }
 
+    //Closes app
     Exit exit = new Exit();
 
     public void exit() {
