@@ -30,3 +30,15 @@ In the mean time I started learning web development so that I can create a onlin
 - JavaFx
 - MySql
 - GitHub
+
+### A small demo ###
+
+P.S. I am sorry for the long demo. You don't have to watch it all
+
+
+https://user-images.githubusercontent.com/100729061/188286082-b8158185-c68d-4ffb-9caf-7ee1ef119df0.mp4
+
+
+
+https://user-images.githubusercontent.com/100729061/188286085-5d330bfe-5928-453b-bce9-0df1043c1fb4.mp4
+
