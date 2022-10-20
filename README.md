@@ -2,9 +2,9 @@
 
 During my summer break I have decided to make a small ATM project to expand my Java skills and make the best use of my time. While making this project I have ran
 into a lot of silly mistakes but at the end I have learnt a lot of valuable lessons and how to be a better programmer. This project has taught me how to use javaFx,
-MySql, GitHub and most importantly it has taught me how to become a better programmer. :relaxed:
+MySql, JDBC API, GitHub and most importantly it has taught me how to become a better programmer. :relaxed:
 
-In the mean time I started learning web development so that I can create a online website and a registration website. :books:
+In the mean time I started learning web development so that I can create a online website and a registration feature. :books:
 
  ### The requirements that I have set for this project are as follows:  ###
 
