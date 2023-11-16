@@ -17,13 +17,12 @@ In the mean time I started learning web development so that I can create a onlin
     - Update details -  can update the users personal details :white_check_mark:
     - Delete account - deletes the account from the DB :white_check_mark:
 * Cash transactions - Shows a report of all the activity that has occured ( a statement ) :white_check_mark:
-* Balance :x:
-* Online banking - This will transfer them to a website that I will make which will be an mini version of online banking :x:
+* Balance :white_check_mark:
 
 ### To do list ###
-- [ ]  Allow the user to register and go to their online banking website.
+- [x]  Allow the user to register and go to their online banking website.
 - [ ]  Fix cash transaction requirement. As of now it only shows the previous transaction and not the whole history :disappointed:
-- [ ]  Add a balance scene where it shows the current users balance.
+- [x]  Add a balance scene where it shows the current users balance.
 
 ### Technologies used ###
 - Java
